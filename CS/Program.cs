@@ -13,25 +13,12 @@ namespace CS
         static void Main(string[] args)
         {
             Methods methods = new Methods();
-            Console.WriteLine("/*Напишите A,Av или*/ S/*(Add,Average и Show)*/");
+            Console.WriteLine("/*Напишите A,Av или*/ S/*(Add,Average и Shoв)*/");
             string selection = Console.ReadLine();
             Console.Beep();
             
             switch (selection)
             {
-                //case "A":
-                //    Console.Write("Введите возраст - ");
-                //    int age = Convert.ToInt32(Console.ReadLine());
-                //    Console.Write("Введите имя - ");
-                //    string name = Console.ReadLine();
-                //    Console.Write("Введите зарплату - ");
-                //    int salary = Convert.ToInt32(Console.ReadLine());
-                //    methods.employees.Add(new Employee(age,name,salary));
-                //    break;
-
-                //case "Av":
-                //    Console.WriteLine(methods.AverageSalary());
-                //    break;
 
                 case "S":
                     methods.ShowEmployees();
