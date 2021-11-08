@@ -10,13 +10,13 @@ namespace Model
     {
         IEnumerable<T> GetAll();
 
-        T GetEmployee(int id);
+        Employee GetEmployee(int id);
 
-        void Create(T item);
+        void Add(T obj);
 
         void Update(T item);
 
-        void Delete(int id);
+        void Delete(T obj);
 
         void Save();
 

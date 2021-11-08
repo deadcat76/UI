@@ -10,17 +10,14 @@ namespace BL
     public class Methods
     {
 
-        public List<Employee> employees = new List<Employee>() 
+        public List<Employee> employees = new List<Employee>()
         {
-            new Employee(18,"Николай", 25000),
-            new Employee(20,"Егор", 18000),
-            new Employee(15,"Никита", 21000),
-            new Employee(35,"Антон", 40000)
+            
         };
 
         public void Add(int age, string name, int salary)
         {
-            employees.Add(new Employee(age, name, salary));
+            //employees.Add(new Employee(age, name, salary));
         }
         
         //public void Delete(int age, string name, int salary)
