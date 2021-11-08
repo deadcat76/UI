@@ -9,40 +9,51 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using BL;
-using DapperDataAccessLayer;
 
 namespace UI
 {
     public partial class Form1 : Form
     {
         private Methods _methods = new Methods();
-
-        private DapperRepository _dapper = new DapperRepository();
         
         public Form1()
         {
             InitializeComponent();
+            Edit.Enabled = false;
+            textBox1.Enabled = false;
             Averagee.Enabled = false;
+            Edit.Enabled = false;
+            foreach (Employee employee in _methods.employees)
+            {
+                listEmployee.Items.Add(employee.ToString());
+            }
 
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
-            Employee eeee = new Employee
-                { 
-                Name = textName.Text, 
-                Age = Convert.ToInt32(textAge.Text), 
-                Salary = Convert.ToInt32(textSalary.Text) 
-             };
-            _dapper.Add(eeee);
+            listEmployee.Items.Clear();
+            _methods.Add(Convert.ToInt32(textAge.Text), Convert.ToString(textName.Text),Convert.ToInt32(textSalary.Text));
+            //listEmployee.Refresh();
+            textAge.Clear();
+            textName.Clear();
+            textSalary.Clear();
+            foreach (Employee employee in _methods.employees)
+            {
+                listEmployee.Items.Add(employee.ToString());
+            }
         }
         
 
 
         private void Remove_Click(object sender, EventArgs e)
         {
-            int index = dataGridView1.CurrentRow.Index;
-            _dapper.Delete(index);
+            _methods.employees.RemoveAt(listEmployee.SelectedIndex);
+            listEmployee.Items.RemoveAt(listEmployee.SelectedIndex);
+            foreach (Employee employee in _methods.employees)
+            {
+                listEmployee.Items.Add(employee.ToString());
+            }
         }
 
         //private void Edit_Click(object sender, EventArgs e)
@@ -69,13 +80,6 @@ namespace UI
         {
 
             Averagee.Text = Convert.ToString(_methods.AverageSalary());
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "tempdbDataSet.Employee". При необходимости она может быть перемещена или удалена.
-            this.employeeTableAdapter.Fill(this.tempdbDataSet.Employee);
-
         }
     }
 }

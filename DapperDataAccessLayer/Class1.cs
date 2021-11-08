@@ -8,6 +8,5 @@ namespace DapperDataAccessLayer
 {
     public class Class1
     {
-
     }
 }

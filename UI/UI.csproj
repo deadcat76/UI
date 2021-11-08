@@ -54,11 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tempdbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>tempdbDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,17 +75,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="tempdbDataSet.xsc">
-      <DependentUpon>tempdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="tempdbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>tempdbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="tempdbDataSet.xss">
-      <DependentUpon>tempdbDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -100,17 +84,10 @@
       <Project>{143994bb-7d36-4d78-8e3f-64ddbdf23213}</Project>
       <Name>BL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DapperDataAccessLayer\DapperDataAccessLayer.csproj">
-      <Project>{73456297-bc28-4e2f-9425-0902be819e90}</Project>
-      <Name>DapperDataAccessLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{287ebf77-05ca-4b6c-96cd-1ba231f316b7}</Project>
       <Name>Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

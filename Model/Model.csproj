@@ -44,7 +44,6 @@
     <Compile Include="Employee.cs" />
     <Compile Include="IDomainObject.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
